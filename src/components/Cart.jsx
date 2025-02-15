@@ -14,11 +14,11 @@ const Cart = () => {
 
   const decreaseQuantity = (id) => {
     setCart(
-      cart.map((pizza) =>
-        pizza.id === id && pizza.count > 1
-          ? { ...pizza, count: pizza.count - 1 }
-          : pizza
-      )
+      cart
+        .map((pizza) =>
+          pizza.id === id ? { ...pizza, count: pizza.count - 1 } : pizza
+        )
+        .filter((pizza) => pizza.id !== id || pizza.count > 0)
     );
   };
 
