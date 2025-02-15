@@ -6,20 +6,19 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div className=" my-4 container">
+      <div className="my-4 container">
         <div className="row">
-          <div className="col-md-4">
-            {pizzas.map((pizza) => (
+          {pizzas.map((pizza) => (
+            <div key={pizza.id} className="col-md-4 mb-4">
               <CardPizza
-                key={pizza.id}
                 name={pizza.name}
                 img={pizza.img}
                 price={pizza.price}
                 description={pizza.desc}
                 ingredients={pizza.ingredients}
               />
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </>
